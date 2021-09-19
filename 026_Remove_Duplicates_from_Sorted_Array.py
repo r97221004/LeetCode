@@ -1,16 +1,13 @@
 # 一個迴圈: 時間複雜度: O(n)
 class Solution:
     def removeDuplicates(self, nums):
-        if nums == []:
-            return 0
-        
-        count = 1
+        start = 0
         for i in range(len(nums)):
-            if nums[i] != nums[count - 1]:
-                nums[count] = nums[i]
-                count += 1
-        return count
-
+            if nums[i] != nums[start]:
+                nums[start + 1] = nums[i]
+                start += 1
+        return start + 1
+     
 p = Solution()
 print(p.removeDuplicates([1, 1, 2, 3, 4]))
 
