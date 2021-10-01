@@ -1,4 +1,4 @@
-# 時間複雜度: 1 + 2 + 3 + ... + n = [1 + n]*n/2 -> O(n**2)
+# 時間複雜度: O(n**2)
 class Solution:
     def generate(self, numRows):
         triangle = []
