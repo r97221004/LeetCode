@@ -22,8 +22,8 @@ class Solution:
 p = Solution()
 print(p.nextGreaterElement([4,1,2], [1,3,4,2]))
 
-# stack
-# 時間複雜度: O(n), n = len(nums2) 且注意 nums1 是 nums2 的子集合，所以數量一定小於等於 n
+# stack 堆疊
+# 時間複雜度: O(n + n + m ) => O(n), 注意在這裡 nums1 是 nums2 的子集, 所以 m <= n
 # 空間複雜度: O(n)
 class Solution:
     def nextGreaterElement(self, nums1, nums2):
