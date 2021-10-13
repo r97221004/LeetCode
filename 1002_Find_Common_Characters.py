@@ -1,5 +1,5 @@
 # Let N be the number of words in the list and M be the maximum length of a single word.
-# 時間複雜度: O(M*N*M)
+# 時間複雜度: O(M*(*N*M + N)) -> O(M*N*M ) 
 # 空間複雜度: O(M)
 class Solution:
     def commonChars(self, words):
