@@ -26,4 +26,11 @@ class Solution:
 
 
 p = Solution()
-print(p.searchInsert([1,3,5,6], 5))  
+print(p.searchInsert([1,3,5,6], 4))  
+print(p.searchInsert([1,3,5,6], 5)) 
+print(p.searchInsert([0,0,0,0], 2))
+
+
+
+
+

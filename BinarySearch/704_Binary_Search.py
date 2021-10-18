@@ -35,5 +35,5 @@ class Solution:
         except:
             return -1
 
-lst = [1,2 ,4]
+lst = [1, 2, 4]
 print(lst.index(3))
