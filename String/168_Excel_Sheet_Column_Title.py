@@ -6,7 +6,7 @@ class Solution:
         result = ''
         
         while columnNumber:
-            columnNumber, result = (columnNumber-1)//26, capitals[(columnNumber-1)%26] + result  
+            columnNumber, result = (columnNumber - 1)//26, capitals[(columnNumber - 1)%26] + result  
             
         return result
     
