@@ -20,4 +20,5 @@ class Solution:
         return result[::-1]
 
 p = Solution()
-print(p.addBinary("1010", b = "1011"))
+print(p.addBinary("1010", b = "1011"))  
+     
