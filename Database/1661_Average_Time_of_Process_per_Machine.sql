@@ -2,7 +2,8 @@ with cte  as (
 
     select machine_id, 
            process_id,
-           sum(case when activity_type = "start" then -timestamp else timestamp end) as total                         from Activity
+           sum(case when activity_type = "start" then -timestamp else timestamp end) as total                         
+           from Activity
     group by machine_id, process_id
 
 )
