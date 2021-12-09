@@ -2,9 +2,8 @@
 # 空間複雜度:O(n)
 class Solution:
     def rotate(self, nums, k):
-        k = k%len(nums)
-        
-        nums[:] = nums[len(nums) - k:] + nums[0 : len(nums) - k] 
+        k = k%len(nums)  
+        nums[:] = nums[len(nums) - k:] + nums[:len(nums) - k] 
 
 
 # 時間複雜度:O(n)

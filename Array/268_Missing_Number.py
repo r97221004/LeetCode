@@ -3,14 +3,15 @@
 # 空間複雜度: O(1)
 class Solution:
     def missingNumber(self, nums):
-        a = len(nums)
+        res = len(nums)
         for i, val in enumerate(nums):
-            a ^= i^val
+            res ^= i^val
         
-        return a
+        return res
 
 p = Solution()
-print(p.missingNumber([9,6,4,2,3,5,7,0,1]))
+print(p.missingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1]))
+
 
 # 時間複雜度: O(n)
 # 空間複雜度: O(n)
@@ -25,4 +26,4 @@ class Solution:
                 return i
 
 p = Solution()
-print(p.missingNumber([9,6,4,2,3,5,7,0,1]))
+print(p.missingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1]))

@@ -7,17 +7,20 @@ class Solution:
         set2 = set(nums2)
         return list(set1 & set2)
 p = Solution()
-print(p.intersection([1,2,2,1], [2,2]))
+print(p.intersection([1, 2, 2, 1], [2, 2]))
 
 
-# 時間複雜度: O(n*m), n = len(nums1) 且 m = len(nums2)
-# 空間複雜度: O(min(n, m))
+# 時間複雜度: O(n + m), n = len(nums1) 且 m = len(nums2)
+# 空間複雜度: O(n + m)
 class Solution:
     def intersection(self, nums1, nums2):
-        result = []
+        res = set()
+        nums2 = set(nums2)
         for i, val in enumerate(nums1):
-            if val in nums2 and val not in result:
-                result.append(val)
-        return result
+            if val in nums2 and val not in res:
+                res.add(val)
+                
+        return res
+
 p = Solution()
-print(p.intersection([1,2,2,1], [2,2]))
+print(p.intersection([1, 2, 2, 1], [2, 2]))

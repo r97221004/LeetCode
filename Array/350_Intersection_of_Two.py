@@ -3,9 +3,6 @@
 
 class Solution:
     def intersect(self, nums1, nums2):
-        if len(nums2) < len(nums1):
-            nums1, nums2 = nums2, nums1
-
         count = {}
         result = []
         
@@ -20,4 +17,4 @@ class Solution:
         return result
 
 p = Solution()
-print(p.intersect([1,2,2,1], [2,2]))
+print(p.intersect([1, 2, 2, 1], [2, 2]))
