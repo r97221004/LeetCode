@@ -11,4 +11,4 @@ class Solution:
         return nums
 
 p = Solution()
-print(p.runningSum([1,2,3,4]))
+print(p.runningSum([1, 2, 3, 4]))

@@ -3,19 +3,17 @@
 # 空間複雜度: O(max(N,M))
 class Solution:
     def commonChars(self, words):
-        result = []
-        first = set(words[0])
+        chars = set(words[0])
+        res = []
         
-        for i in first:
-            count = []
-            for word in words:
-                count.append(word.count(i))
-            result += [i]*min(count)
-        
-        return result
+        for char in chars:
+            count = min([word.count(char) for word in words])
+            res += [char]*count
+            
+        return res
 
 p = Solution()
-print(p.commonChars(["bella","label","roller"]))
+print(p.commonChars(["bella", "label", "roller"]))
 
 
 
