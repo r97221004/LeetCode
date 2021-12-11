@@ -9,4 +9,4 @@ class Solution:
         return list(ans.values())
 
 p = Solution()
-print(p.groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
+print(p.groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))

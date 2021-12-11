@@ -3,23 +3,23 @@
 # Sliding window
 class Solution:
     def lengthOfLongestSubstring(self, s):
-        seen = {}
-        left = 0
-        output = 0
-        
-        for right, val in enumerate(s):
-            if val not in seen:
-                output = max(output, right - left + 1)
+        data = {}
+        longest = 0
+        start = 0
+        for i, val in enumerate(s):
+            if val not in data:
+                data[val] = i
+            
+            # 考慮 "abba"
+            elif data[val] < start:
+                data[val] = i
                 
             else:
-                if seen[val] >= left:
-                    left = seen[val] + 1
-                else:
-                    output = max(output, right - left + 1)
-            
-            seen[val] = right
+                longest = max(longest, i - start)
+                start = data[val] + 1
+                data[val] = i
                 
-        return output
+        return max(longest, len(s) - start)
                 
 p = Solution()
 print(p.lengthOfLongestSubstring("abcabcbb"))
