@@ -3,11 +3,13 @@
 class Solution:
     def twoSum(self, numbers, target):
         data = {}
-        for i in range(len(numbers)):
-            if target - numbers[i] not in data:
-                data[numbers[i]] = i + 1
+        
+        for i, val in enumerate(numbers):
+            if target - val not in data:
+                data[val] = i + 1
+                
             else:
-                return [data[target - numbers[i]], i + 1 ]
+                return [ data[target - val], i + 1]
 
 p = Solution()
-print(p.twoSum([2,7,11,15], 9))
+print(p.twoSum([2, 7, 11, 15], 9))

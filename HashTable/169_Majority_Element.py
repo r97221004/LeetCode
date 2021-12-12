@@ -14,7 +14,7 @@ class Solution:
         return candidate
 
 p = Solution()
-print(p.majorityElement([2,2,1,1,1,2,2]))
+print(p.majorityElement([2, 2, 1, 1, 1, 2, 2]))
 
 # 時間複雜度: O(n)
 # 空間複雜度: O(n)
@@ -29,6 +29,6 @@ class Solution:
                 return key
 
 p = Solution()
-print(p.majorityElement([2,2,1,1,1,2,2]))
+print(p.majorityElement([2, 2, 1, 1, 1, 2, 2]))
 
 
