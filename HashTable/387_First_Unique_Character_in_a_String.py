@@ -2,14 +2,13 @@
 # 空間複雜度: O(1), 英文字母最多 26 個
 class Solution:
     def firstUniqChar(self, s):
-        mapping = {}
+        count = {}
         
         for i in s:
-            mapping[i] = mapping.get(i, 0) + 1
-            
+            count[i] = count.get(i, 0) + 1
+        
         for i, val in enumerate(s):
-            if mapping[val] == 1:
-                return i
+            if count[val] == 1: return i
             
         return -1
 

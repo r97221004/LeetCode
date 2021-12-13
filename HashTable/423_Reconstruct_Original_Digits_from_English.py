@@ -26,3 +26,16 @@ class Solution:
 
 p = Solution()
 print(p.originalDigits("owoztneoer"))
+
+
+# zero    
+# one
+# two
+# three
+# four
+# five
+# six
+# seven
+# eight
+# nine
+# ten

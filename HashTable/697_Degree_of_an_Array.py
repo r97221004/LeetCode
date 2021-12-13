@@ -2,19 +2,23 @@
 # 空間複雜度: O(n)
 class Solution:
     def findShortestSubArray(self, nums):
-        first, count, res, degree = {}, {}, 0, 0
-        
+        first = {}
+        count ={}
+        deg = 0
+        res = 0
+
         for i, val in enumerate(nums):
             first.setdefault(val, i)
             count[val] = count.get(val, 0) + 1
             
-            if count[val] > degree:
-                degree = count[val]
+            if count[val] == deg:
+                res =  min(res, i - first[val] + 1)
+            elif count[val] > deg:
                 res = i - first[val] + 1
-            elif count[val] == degree:
-                res = min(res, i - first[val] + 1)
-                
+                deg = count[val]
+            
         return res
+    
 
 p = Solution()
-print(p.findShortestSubArray([1,2,2,3,1]))
+print(p.findShortestSubArray([1, 2, 2, 3, 1]))
