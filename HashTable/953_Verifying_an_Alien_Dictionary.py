@@ -3,18 +3,19 @@
 # 空間複雜度: O(1), 因為 N 會固定在 26
 class Solution:
     def isAlienSorted(self, words, order):
-        order_map = {}
+        orderDict = {}
+        
         for i, val in enumerate(order):
-            order_map[val] = i
-                   
+            orderDict[val] = i
+                
         for w1, w2 in zip(words, words[1:]):
             for i in range(len(w1)):
-                if i > len(w2) - 1: return False
-                
-                if w1[i] != w2[i]:
-                    if order_map[w1[i]] > order_map[w2[i]]: return False
+                if i <= len(w2) - 1 and orderDict[w1[i]] < orderDict[w2[i]]:
                     break
-        
+                elif i <= len(w2) - 1 and orderDict[w1[i]] > orderDict[w2[i]]:
+                    return False
+                elif i > len(w2) - 1:
+                    return False
         return True
 
 p = Solution()
