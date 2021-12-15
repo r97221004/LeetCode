@@ -12,7 +12,7 @@ class Solution:
             return
         
         k = i - 1 # find the last "ascending" position
-        while nums[j] <= nums[k]:
+        while nums[k] >= nums[j]:
             j -= 1
         
         nums[k], nums[j] = nums[j], nums[k]

@@ -1,5 +1,5 @@
-# 直接改不需要返回值
-# 時間複雜度: O(n)
+# 時間複雜度: O(n + m)
+# 空間複雜度: O(1)
 class Solution(object):
     def merge(self, nums1, m, nums2, n):
         while m > 0 and n > 0:
