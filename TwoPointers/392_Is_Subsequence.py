@@ -3,8 +3,9 @@
 class Solution:
     def isSubsequence(self, s, t):
         start = 0
-        for i, val in enumerate(t):
-            if start <= len(s) - 1 and val == s[start]: # 注意兩個位置不能對調
+        
+        for i in t:
+            if start < len(s) and i == s[start]:   # 注意兩個位置不能對調
                 start += 1
                 
         return start == len(s)
