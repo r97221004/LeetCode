@@ -7,3 +7,6 @@ class Solution:
 
 p = Solution()
 print(p.countBinarySubstrings("00110011"))
+
+
+

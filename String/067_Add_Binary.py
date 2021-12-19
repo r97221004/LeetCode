@@ -14,11 +14,11 @@ class Solution:
             if b:
                 carry += int(b.pop())
                 
-            res += str(carry%2)
+            res = str(carry%2) + res
             carry //= 2
         
         
-        return res[::-1]
+        return res
 
 p = Solution()
 print(p.addBinary("1010", b = "1011"))  

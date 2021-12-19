@@ -10,3 +10,13 @@ class Solution:
     
 p = Solution()
 print(p.minOperations("0100"))    
+
+# 時間複雜度: O(n)
+# 空間複雜度: O(n)
+class Solution:
+    def minOperations(self, s):
+        c = [(i%2)^int(val) for i, val in enumerate(s)] 
+        return min(sum(c), len(s) - sum(c))
+    
+p = Solution()
+print(p.minOperations("0100"))   

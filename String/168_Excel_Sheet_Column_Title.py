@@ -25,7 +25,7 @@ class Solution:
             b, m = divmod(b - 1, 26)
             res = [m] + res
         
-        data = { i:chr(i + 65) for i in range(26)}
+        data = { i: chr(i + 65) for i in range(26)}
         res = [ data[i] for i in res]        
         return "".join(res)
     

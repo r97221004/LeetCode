@@ -6,6 +6,7 @@ class Solution:
         b = list(num2)
         carry = 0
         result = ''
+        
         while a or b or carry:
             if a:
                 carry += int(a.pop())
