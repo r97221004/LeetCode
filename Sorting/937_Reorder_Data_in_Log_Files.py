@@ -6,17 +6,16 @@ class Solution:
         digits = []
         letters = []
 		
-        for i in logs:
-            if i.split(' ')[1].isdigit():
-                digits.append(i)
+        for log in logs:
+            if log.split(' ')[1].isdigit():
+                digits.append(log)
             else:
-                letters.append(i)
+                letters.append(log)
         
-        letters.sort(key = lambda x:x.split(' ')[0])
-        letters.sort(key = lambda x:x.split(' ')[1:])
-        result = letters + digits
-        return result
-
+        letters.sort(key = lambda x: x.split(' ')[0])
+        letters.sort(key = lambda x: x.split(' ')[1:])
+        return letters + digits
+        
 p = Solution()
-print(p.reorderLogFiles(["dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"]))
+print(p.reorderLogFiles(["dig1 8 1 5 1", "let1 art can", "dig2 3 6", "let2 own kit dig", "let3 art zero"]))
 

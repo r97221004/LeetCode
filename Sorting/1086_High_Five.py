@@ -2,24 +2,15 @@
 # 空間複雜度: O(n)
 class Solution:
     def highFive(self, items):
-        items.sort(reverse = True)
-        result = []
-        curr = []
-        idx = items[0][0]
+        items.sort()
+        items = items[::-1]
+        res = []
         
-        for i, val in items:
-            if i == idx:
-                if len(curr) < 5:
-                    curr.append(val)
-            else:
-                result.append([idx, sum(curr)//len(curr)])  # 要的是整數部分，所以用 // 運算子
-                curr = [val]
-                idx = i
+        for k, [i, val] in enumerate(items):
+            if not res or i != res[-1][0]:
+                res.append([i, sum( items[i][1] for i in range(k, k + 5))//5])
+            
+        return res[::-1]
         
-        result.append([idx, sum(curr)//len(curr)])
-        result = result[::-1]
-        
-        return result
-
 p = Solution()
-print(p.highFive( [[1,91],[1,92],[2,93],[2,97],[1,60],[2,77],[1,65],[1,87],[1,100],[2,100],[2,76], [2,10]]))
+print(p.highFive( [[1,91], [1,92], [2,93], [2,97], [1,60], [2,77], [1,65], [1,87], [1,100], [2,100], [2,76], [2,10]]))
