@@ -29,17 +29,16 @@ class Solution:
     def nextGreaterElement(self, nums1, nums2):
         data = {}
         stack = []
-        answer = []
         
         for i in nums2:
             while stack and stack[-1] < i:
                 data[stack.pop()] = i
             stack.append(i)
             
-        for i in nums1:
-            answer.append(data.get(i, -1))
+        for i, val in enumerate(nums1):
+            nums1[i] = data.get(val, -1)
         
-        return answer
+        return nums1
 
 p = Solution()
 print(p.nextGreaterElement([4,1,2], [1,3,4,2]))

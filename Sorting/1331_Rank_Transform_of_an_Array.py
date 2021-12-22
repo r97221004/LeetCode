@@ -3,20 +3,17 @@
 
 class Solution:
     def arrayRankTransform(self, arr):
+        ans = sorted(arr) # .sort() 方法是 in-place, 而 sorted() 函式不是
         data = {}
-        arrSorted = sorted(arr)  # .sort() 方法是 in-place, 而 sorted() 函式不是 
         rank = 1
         
-        for i in arrSorted:
-            if i not in data:
+        for i in ans:
+            if i not in data: 
                 data[i] = rank
                 rank += 1
         
-        for i, val in enumerate(arr):
-            arr[i] = data[val]
-            
-        
-        return arr
+        ans = [data[i] for i in arr]
+        return ans   
 
 p = Solution()
-print(p.arrayRankTransform([40,10,20,30]))
+print(p.arrayRankTransform([40, 10, 20, 30]))
