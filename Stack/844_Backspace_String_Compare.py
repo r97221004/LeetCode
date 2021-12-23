@@ -2,16 +2,16 @@
 # 空間複雜度: O(n + m)
 class Solution:
     def backspaceCompare(self, s, t):
-        def build(x):
-            ans = []
-            for i in x:
-                if i != '#':
-                    ans.append(i)
-                elif ans:
-                    ans.pop()
-            return ''.join(ans)
+        return self.helper(s) == self.helper(t)
+               
+    def helper(self, s):
+        stack = []
         
-        return build(s) == build(t)
+        for i in s:
+            if i != "#": stack.append(i)
+            elif stack: stack.pop()
+                
+        return "".join(stack)
 
 p = Solution()
 print(p.backspaceCompare("y#fo##f", "y#f#o##f"))

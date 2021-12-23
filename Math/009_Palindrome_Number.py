@@ -1,6 +1,5 @@
 # 時間複雜度: O(n), n = len(x)
 # 空間複雜度: O(n)
-# Could you solve it without converting the integer to a string?
 class Solution:
     def isPalindrome(self, x):
         x = str(x)
@@ -10,7 +9,7 @@ p = Solution()
 print(p.isPalindrome(x = 121))
 
 
-# 時間複雜度: O(n), n = len(x)
+# 時間複雜度: O(n)
 # 空間複雜度: O(n)
 class Solution:
     def isPalindrome(self, x):
@@ -26,6 +25,24 @@ class Solution:
                 return False
         
         return True
+
+p = Solution()
+print(p.isPalindrome(x = 121))
+
+# 時間複雜度: O(n)
+# 空間複雜度: O(n)
+# 沒有轉成字串
+class Solution:
+    def isPalindrome(self, x):
+        if x < 0: return False
+        
+        res = []
+ 
+        while x:
+            x, r = x//10, x%10
+            res = [r] + res
+            
+        return res == res[::-1] 
 
 p = Solution()
 print(p.isPalindrome(x = 121))
