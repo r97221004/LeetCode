@@ -1,5 +1,6 @@
 # 時間複雜度: O(n*n)
 # 空間複雜度: O(1)
+# Time Limit Exceeded
 class Solution:
     def countPrimes(self, n):
         res = 0

@@ -1,4 +1,5 @@
 # 時間複雜度:  O(max(n, log k))
+# 空間複雜度: O(1)
 class Solution:
     def addToArrayForm(self, num, k):
         for i in range(len(num) - 1, -1, -1):
@@ -14,4 +15,25 @@ class Solution:
         return [k] + num
 
 p = Solution()
-print(p.addToArrayForm([2,1,5], 806))
+print(p.addToArrayForm([2, 1, 5], 806))
+
+# 時間複雜度:  O(max(n, log k))
+# 空間複雜度: O(1)
+class Solution:
+    def addToArrayForm(self, num, k):
+        for i in range(len(num) - 1, -1, -1):
+            carry = k
+            
+            for i in range(len(num) - 1, -1, -1):
+                carry += num[i]
+                num[i] = carry%10
+                carry //= 10
+                
+            while carry:
+                num = [carry%10] + num
+                carry //= 10
+            
+            return num
+
+p = Solution()
+print(p.addToArrayForm([2, 1, 5], 806))
