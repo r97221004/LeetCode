@@ -13,4 +13,22 @@ class Solution:
         return res
     
 p = Solution()
-print(p.sumOddLengthSubarrays([1,4,2,5,3]))
+print(p.sumOddLengthSubarrays([1, 4, 2, 5, 3]))
+
+
+# 時間複雜度: O(n*n) ?
+# 空間複雜度: O(n)
+class Solution:
+    def sumOddLengthSubarrays(self, arr):
+        res = 0
+        
+        for i in range(len(arr)):
+            end = i + 1
+            while end <= len(arr):
+                res += sum(arr[i: end])
+                end += 2
+                
+        return res 
+    
+p = Solution()
+print(p.sumOddLengthSubarrays([1, 4, 2, 5, 3]))

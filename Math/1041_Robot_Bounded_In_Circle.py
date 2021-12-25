@@ -4,7 +4,7 @@ class Solution:
     def isRobotBounded(self, instructions):
         x = y = 0
         direction = 0
-        possible_moves = {0: [0, 1], 1: [1, 0], 2: [0, -1], 3: [-1, 0]}
+        moves = {0: [0, 1], 1: [1, 0], 2: [0, -1], 3: [-1, 0]}
 
         for instruction in instructions:
             if instruction == "L":
@@ -13,8 +13,8 @@ class Solution:
                 direction = (direction + 1)%4
         
             else:
-                x = x + possible_moves[direction][0]
-                y = y + possible_moves[direction][1]
+                x += moves[direction][0]
+                y += moves[direction][1]
         
         return (x == 0 and y ==0) or direction != 0
 
