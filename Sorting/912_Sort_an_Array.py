@@ -40,21 +40,21 @@ class Solution(object):
             while i < len(L) and j < len(R): 
                 if L[i] < R[j]: 
                     nums[k] = L[i] 
-                    i+=1
+                    i += 1
                 else: 
                     nums[k] = R[j] 
-                    j+=1
+                    j += 1
                 k+=1
  
             while i < len(L): 
                 nums[k] = L[i] 
-                i+=1
-                k+=1
+                i += 1
+                k += 1
 
             while j < len(R): 
                 nums[k] = R[j] 
-                j+=1
-                k+=1
+                j += 1
+                k += 1
 
 p = Solution()
 print(p.sortArray([6, 5, 3, 1, 8, 7, 2, 4]))
