@@ -2,7 +2,9 @@
 # 空間複雜度: O(1)
 class Solution:
     def search(self, nums, target):
-        left, right = 0, len(nums) - 1
+        left = 0
+        right = len(nums) - 1
+
         while left <= right:
             mid = (left + right) // 2
             # if found target value, return the index
@@ -41,4 +43,4 @@ class Solution:
         return -1
 
 p = Solution()
-print(p.search([4,5,6,7,0,1,2], 0))
+print(p.search([4, 5, 6, 7, 0, 1, 2], 0))

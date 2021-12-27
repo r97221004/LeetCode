@@ -28,9 +28,9 @@ class Solution:
             else:
                 start = mid + 1
         
-        return arr[start - 1] + k - (arr[start - 1] - (start - 1) - 1 ) if start != 0 else k
+        return arr[start - 1] + k - (arr[start - 1] - (start - 1) - 1 ) if start > 0 else k
         
-        # [1,1,1,3,6]
+        # [1, 1, 1, 3, 6]
         
 p = Solution()
 print(p.findKthPositive([2, 3, 4, 7, 11], 5))

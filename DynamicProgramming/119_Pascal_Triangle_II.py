@@ -1,4 +1,5 @@
 # 時間複雜度: 2 + 3 + 4 ... + (n + 1) = [2 + (n + 1)]*(n)]/2 -> O(n**2)
+# 空間複雜度: O(n)
 class Solution:
     def getRow(self, rowIndex):
         row = [1]
