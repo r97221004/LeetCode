@@ -13,4 +13,4 @@ class Solution:
         return count >= n
 
 p = Solution()
-print(p.canPlaceFlowers([1,0,0,0,1], 1))
+print(p.canPlaceFlowers([1, 0, 0, 0, 1], 1))

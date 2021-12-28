@@ -16,4 +16,4 @@ class Solution:
         return count >= 3 # 會有像 arr = [1 -1 1 -1 1 -1 1 -1] 的例子，所以要大於等於 3
 
 p = Solution()
-print(p.canThreePartsEqualSum([0,2,1,-6,6,-7,9,1,2,0,1]))
+print(p.canThreePartsEqualSum([0, 2, 1, -6, 6, -7, 9, 1, 2, 0, 1]))

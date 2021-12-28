@@ -2,21 +2,17 @@
 # 空間複雜度: O(1)
 class Solution:
     def islandPerimeter(self, grid):
-        rows, cols = len(grid), len(grid[0])
-        result = 0 
+        res = 0
         
-        for r in range(rows):
-            for c in range(cols):
-                if grid[r][c] == 1:
-                    result += 4
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                if grid[i][j] == 1: 
+                    res += 4
                     
-                    if r - 1 >= 0 and grid[r - 1][c] == 1:
-                        result -= 2
-                    
-                    if c - 1 >= 0 and grid[r][c - 1] == 1:
-                        result -= 2
-                    
-        return result
-
+                    if i - 1 >= 0 and grid[i - 1][j] == 1: res -= 2
+                    if j - 1 >= 0 and grid[i][j - 1] == 1: res -= 2
+                                             
+        return res
+        
 p = Solution()
-print(p.islandPerimeter([[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]))
+print(p.islandPerimeter([[0, 1, 0, 0], [1, 1, 1, 0], [0, 1, 0, 0], [1, 1, 0, 0]]))
