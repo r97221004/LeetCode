@@ -21,10 +21,10 @@ class Solution:
         return len(free_rooms)
 
 p = Solution()
-print(p.minMeetingRooms([[0,30],[5,10],[15,20]]))
+print(p.minMeetingRooms([[0,30], [5,10], [15,20]]))
 
 
-# 時間複雜度: O(nlog(n)) ?
+# 時間複雜度: O(nlog(n))
 # 空間複雜度: O(n)
 class Solution:
     def minMeetingRooms(self, intervals):
@@ -32,7 +32,7 @@ class Solution:
             return 0
         
         free_rooms = []
-        intervals.sort(key = lambda x:x[0])
+        intervals.sort(key = lambda x: x[0])
         
         free_rooms.append(intervals[0][1])
         
@@ -44,4 +44,30 @@ class Solution:
             free_rooms.sort(reverse = True)
             
         return len(free_rooms)
+
+p = Solution()
+print(p.minMeetingRooms([[0,30], [5,10], [15,20]]))
+
+
+# 時間複雜度: O(nlog(n))
+# 空間複雜度: O(n)
+class Solution:
+    def minMeetingRooms(self, intervals):
+        record = []
+        res = 0
+        count = 0
         
+        for i, j in intervals:
+            record.append([i, 1])
+            record.append([j, -1])
+            
+        record.sort() # 這裡不能改成 record.sort(key=lambda x: x[0]) 
+        
+        for i, j in record:
+            count += j
+            if count > res: res = count
+                
+        return res
+
+p = Solution()
+print(p.minMeetingRooms([[0,30], [5,10], [15,20]]))
