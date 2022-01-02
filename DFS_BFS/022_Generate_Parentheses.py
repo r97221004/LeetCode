@@ -2,22 +2,25 @@
 # 空間複雜度: ? 
 class Solution:
     def generateParenthesis(self, n):
-        if not n:
-            return []
-        left, right, ans = n, n, []
-        self.dfs(left, right, ans, "")
-        return ans
+        left = n
+        right = n 
+        res = []
+
+        self.dfs(left, right, res, "")
+
+        return res
     
-    def dfs(self, left, right, ans, String):
+    # 注意下面的 if 順序不能隨便對調
+    def dfs(self, left, right, res, string):
         if right < left:
             return
         if not right and not left:
-            ans.append(String)
+            res.append(string)
             return       
         if left:
-            self.dfs(left - 1, right, ans, String + "(")
+            self.dfs(left - 1, right, res, string + "(")
         if right:
-            self.dfs(left, right - 1, ans, String + ')' )
+            self.dfs(left, right - 1, res, string + ')' )
 
 p = Solution()
-print(p.generateParenthesis( n = 3))
+print(p.generateParenthesis(n = 3))

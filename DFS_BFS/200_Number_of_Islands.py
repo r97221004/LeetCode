@@ -2,9 +2,6 @@
 # 空間複雜度: O(n*m)
 class Solution:
     def numIslands(self, grid):
-        if not grid:
-            return 0
-        
         count = 0
         
         for i in range(len(grid)):
@@ -15,7 +12,6 @@ class Solution:
                     
         return count
                     
-    
     def dfs(self, grid, i, j):
         if grid[i][j] == "1":
             grid[i][j] = "#"
