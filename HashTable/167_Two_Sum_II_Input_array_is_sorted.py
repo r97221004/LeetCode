@@ -13,3 +13,21 @@ class Solution:
 
 p = Solution()
 print(p.twoSum([2, 7, 11, 15], 9))
+
+
+
+class Solution:
+    def twoSum(self, numbers, target):
+        prevMap = {}
+
+        for i, value in enumerate(numbers):
+            diff = target - value
+            if diff in prevMap:
+                return [prevMap[diff] + 1, i + 1]
+            prevMap[value] = i
+
+        return []
+
+
+p = Solution()
+print(p.twoSum([2, 7, 11, 15], 9))
