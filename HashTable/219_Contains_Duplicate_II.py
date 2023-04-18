@@ -14,3 +14,23 @@ class Solution:
         
 p = Solution()
 print(p.containsNearbyDuplicate([1, 2, 3, 1, 2, 3], 2))
+
+
+
+class Solution:
+    def containsNearbyDuplicate(self, nums, k):
+        mapping = {
+
+        }
+
+        for index, val in enumerate(nums):
+            if val in mapping:
+                if index - mapping[val] <= k: return True
+
+            mapping[val] = index
+
+        return False
+
+
+p = Solution()
+print(p.containsNearbyDuplicate([1, 2, 3, 1, 2, 3], 2))
