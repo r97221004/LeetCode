@@ -7,6 +7,7 @@ class Solution:
                 if nums[i] + nums[j] == target:
                     return [i, j]
 
+
 p = Solution()
 print(p.twoSum([2, 7, 11, 15], 9))
 
@@ -15,13 +16,16 @@ print(p.twoSum([2, 7, 11, 15], 9))
 # 空間複雜度: O(n)
 class Solution:
     def twoSum(self, nums, target):
-        data = {}
-        
-        for i, val in enumerate(nums):
-            if target - val not in data:
-                data[val] = i
+        prevMap = {}
+        for i, value in enumerate(nums):
+            diff = target - value
+            if diff not in prevMap:
+                prevMap[value] = i
             else:
-                return [i, data[target - val]]
+                return [prevMap[diff], i]
+
+        return []
+
 
 p = Solution()
 print(p.twoSum([2, 7, 11, 15], 9))
