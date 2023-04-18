@@ -23,3 +23,18 @@ class Solution:
 p = Solution()
 print(p.containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
         
+
+class Solution:
+    def containsDuplicate(self, nums):
+        hashSet = set()
+
+        for i in nums:
+            if i in hashSet:
+                return True
+            else:
+                hashSet.add(i)
+                
+        return False
+    
+p = Solution()
+print(p.containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
