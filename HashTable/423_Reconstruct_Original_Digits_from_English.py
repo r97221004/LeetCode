@@ -39,3 +39,39 @@ print(p.originalDigits("owoztneoer"))
 # eight
 # nine
 # ten
+
+class Solution:
+    def originalDigits(self, s):
+        res = {}
+        count = {}
+
+        for n in s:
+            count[n] = count.get(n, 0) + 1
+
+        res['0'] = count.get('z', 0)
+        res['2'] = count.get('w', 0)
+        res['4'] = count.get('u', 0)
+        res['6'] = count.get('x', 0)
+        res['8'] = count.get('g', 0)
+        res['1'] = count.get('o', 0) - res['0'] - res['2'] - res[4]
+        res['3'] = count.get('h', 0) - res['8']
+        res['5'] = count.get('f', 0) - res['4']
+        res['7'] = count.get('s', 0) - res['6']
+        res['9'] = count.get('i', 0) - res['5'] - res['6'] - res['8']
+
+        return ''.join([ str(i)*res[str(i)] for i in range(10)])
+
+
+p = Solution()
+print(p.originalDigits("owoztneoer"))
+
+
+
+
+
+
+
+
+
+
+
