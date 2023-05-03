@@ -10,3 +10,24 @@ class Solution:
 
 p = Solution()
 print(p.groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
+
+
+
+class Solution:
+    def groupAnagrams(self, strs):
+        mapping = {
+
+        }
+
+        for i in strs:
+            tmp = tuple(sorted(i))
+            if  tmp in mapping:
+                mapping[tmp].append(i)
+
+            else:
+                mapping[tmp] = [i]
+
+        return [ value for key, value in mapping.items()] 
+    
+p = Solution()
+print(p.groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
