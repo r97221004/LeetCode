@@ -33,3 +33,21 @@ class Solution:
 
 p = Solution()
 print(p.maxProfit([7, 1, 5, 3, 6, 4]))
+
+class Solution:
+    def maxProfit(self, prices):
+        max_profit = 0
+        start = 0
+
+
+        for index, p in enumerate(prices):
+            diff = p - prices[start]
+            max_profit = max(max_profit, diff)
+            if diff < 0:
+                start = index
+
+        return max_profit
+
+
+p = Solution()
+print(p.maxProfit([7, 1, 5, 3, 6, 4]))
