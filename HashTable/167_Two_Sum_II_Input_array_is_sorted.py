@@ -1,5 +1,6 @@
 # 時間複雜度: O(n)
 # 空間複雜度: O(n)
+# Your solution must use only constant extra space.
 class Solution:
     def twoSum(self, numbers, target):
         data = {}
@@ -11,6 +12,8 @@ class Solution:
             else:
                 return [ data[target - val], i + 1]
 
+# 時間複雜度: O(n)
+# 空間複雜度: O(n)
 p = Solution()
 print(p.twoSum([2, 7, 11, 15], 9))
 

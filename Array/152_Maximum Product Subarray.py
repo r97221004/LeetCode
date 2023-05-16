@@ -7,8 +7,7 @@ class Solution:
         curMax = 1
 
         for n in nums:
-            curMax, curMin = max(curMin*n, curMax*n,
-                                 n), min(curMin*n, curMax*n, n)
+            curMax, curMin = max(curMin*n, curMax*n, n), min(curMin*n, curMax*n, n)
             maxProd = max(maxProd, curMax)
 
         return maxProd
