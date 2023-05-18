@@ -2,7 +2,8 @@
 # 空間複雜度：O(n)
 class Solution:
     def numDecodings(self, s):
-        dp = {len(s): 1}
+        # dp = {len(s): 1}
+        dp = [1]*(len(s) + 1)
 
         for i in range(len(s) - 1, -1, -1):
             if s[i] == '0':
