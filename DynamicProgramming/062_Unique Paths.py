@@ -15,3 +15,20 @@ class Solution:
 
 p = Solution()
 print(p.uniquePaths(m=3, n=7))
+
+
+# 時間複雜度: O(m*n)
+# 空間複雜度: O(n)
+class Solution:
+    def uniquePaths(self, m, n):
+        dp = [1]*(n)
+
+        for _ in range(m-1):
+            for j in range(1, n):
+                dp[j] =dp[j-1] + dp[j]
+                
+        return dp[-1]
+
+
+p = Solution()
+print(p.uniquePaths(m=3, n=7))
