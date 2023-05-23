@@ -55,7 +55,6 @@ class BinarySearchTree:
         return False
 
     def _r_search(self, current_root, value):
-
         if current_root == None:
             return False
         if value == current_root.value:
@@ -67,30 +66,28 @@ class BinarySearchTree:
             return self._r_search(current_root=current_root.right, value=value)
 
     def r_search(self, value):
-
         return self._r_search(self.root, value)
 
     def _r_insert(self, current_root, value):
-        if current_root == None:
-            return Node(value)
-
         if value < current_root.value:
-            current_root.left = self._r_insert(
-                current_root=current_root.left, value=value
-            )
-        if value > current_root.value:
-            current_root.right = self._r_insert(
-                current_root=current_root.right, value=value
-            )
-        if value == current_root.value:
-            return current_root
+            if current_root.left == None:
+                current_root.left = Node(value)
+            else:
+                self._r_insert(current_root.left, value)
+        elif value > current_root.value:
+            if current_root.right == None:
+                current_root.right = Node(value)
+            else:
+                self._r_insert(current_root.right, value)
+
+        else:
+            print("This value has existed.")
 
     def r_insert(self, value):
-
         if self.root is None:
             self.root = Node(value)
-
-        self._r_insert(self.root, value)
+        else:
+            self._r_insert(self.root, value)
 
 
 if __name__ == "__main__":
@@ -103,3 +100,7 @@ if __name__ == "__main__":
     print(bst.root)
     print(bst.root.left)
     print(bst.root.right)
+    print(bst.root.left.left)
+    print(bst.r_search(3))
+    print(bst.r_search(5))
+    print(bst.r_search(8))
