@@ -1,6 +1,6 @@
 # 時間複雜度: O(n + p)
 class Solution:
-    def canFinish(self, numCourses: int, prerequisites):
+    def canFinish(self, numCourses, prerequisites):
         preMap = {i: [] for i in range(numCourses)}
         for crs, pre in prerequisites:
             preMap[crs].append(pre)
