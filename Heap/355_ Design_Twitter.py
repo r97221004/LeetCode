@@ -10,7 +10,7 @@ class Twitter:
         # userId -> set of followeeId
         self.followMap = defaultdict(set)
 
-    def postTweet(self, userId, tweetId) -> None:
+    def postTweet(self, userId, tweetId):
         self.tweetMap[userId].append([self.count, tweetId])
         self.count -= 1
 
@@ -33,10 +33,10 @@ class Twitter:
                     minHeap, [count, tweetId, followeeId, index - 1])
         return res
 
-    def follow(self, followerId, followeeId) -> None:
+    def follow(self, followerId, followeeId):
         self.followMap[followerId].add(followeeId)
 
-    def unfollow(self, followerId: int, followeeId: int) -> None:
+    def unfollow(self, followerId, followeeId):
         if followeeId in self.followMap[followerId]:
             self.followMap[followerId].remove(followeeId)
 
