@@ -3,22 +3,20 @@ class Solution:
     def __init__(self):
         self.ans = []
 
-    def find(self, visited, nums, permutation):
-        if (len(visited) == len(nums)):
-            self.ans.append(permutation[:])
+    def find(self, visited, nums, max_length, perm):
+        if len(perm) == max_length:
+            self.ans.append(perm[:])
             return
-
         for n in nums:
             if n not in visited:
+                perm.append(n)
                 visited.add(n)
-                permutation.append(n)
-                self.find(visited, nums, permutation)
+                self.find(visited, nums, max_length, perm)
+                perm.pop()
                 visited.remove(n)
-                permutation.pop()
 
     def permute(self, nums):
-        self.ans = []
-        self.find(set(), nums, [])
+        self.find(set(), nums, len(nums), [])
         return self.ans
 
 
